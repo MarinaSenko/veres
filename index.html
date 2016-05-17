@@ -1,0 +1,100 @@
+<!Doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Верес</title>
+    <link rel="stylesheet" href="style.css">
+
+<script> 
+    function showContent(link) { 
+        var cont = document.getElementById('content'); 
+        var loading = document.getElementById('loading'); 
+        cont.innerHTML = loading.innerHTML;   
+        var http = createRequestObject(); 
+        if( http )  
+        { http.open('get', link); 
+            http.onreadystatechange = function ()  
+            {   if(http.readyState == 4)  
+                {   cont.innerHTML = http.responseText;  }    }
+            http.send(null);  } 
+        else  
+        {  document.location = link; }   }
+    // ajax объект
+    function createRequestObject()  
+    {  try { return new XMLHttpRequest() } 
+        catch(e)  
+        {  try { return new ActiveXObject('Msxml2.XMLHTTP') } 
+            catch(e)  
+            {   try { return new ActiveXObject('Microsoft.XMLHTTP') } 
+                catch(e) { return null; }   } } } 
+</script>
+</head>
+<body id="bg">
+<header>
+    <div id="header">
+        <img src="image/logo.png" alt="" style="float: left" width="55" height="150">
+        <div id="tel" style="float:left">
+            <h2>0(800) 555 555</h2>
+            <h2>0(800) 555 555</h2>
+        </div>
+        <button class="btn">Презвоните мне</button>
+        <button class="btn">Консультация онлайн</button>
+    </div>
+    <div>
+        <ul id="ul">
+            <li>
+                <p><a href="#" onClick="showContent('about.html')">О нас</a></p>
+            </li>
+            <li>
+                <p><a href="#" onClick="showContent('delivery.html')">Оплата и доставка</a></p>
+            </li>
+            <li>
+                <p><a href="#" onClick="showContent('kontacts.html')">Контакты</a></p>
+            </li>
+        </ul>
+    </div>
+</header>
+<nav>
+    <div class="nav">
+        <span><a href="#" onClick="showContent('veget.html')">Овощи гарнирные</a></span>
+    </div>
+    <div class="nav">
+        <span><a href="#" onClick="showContent('salting.html')">Соления</a></span>
+    </div>
+    <div class="nav">
+        <span><a href="#" onClick="showContent('mix.html')">Закуски</a></span>
+    </div>
+    <diV class="nav">
+        <span><a href="#" onClick="showContent('jam.html')">Джемы</a></span>
+    </diV>
+    <div class="nav">
+        <span><a href="#" onClick="showContent('sause.html')">Соусы</a></span>
+    </div>
+</nav>
+        <div id="content">
+        </div>
+    <div id="loading" style="display: none"> 
+    Идет загрузка...
+    </div>
+<footer>
+    <div id="foot" style="clear: both">
+        <ul>
+            <li class="footer"><a href="#" onClick="showContent('about.html')">О нас</a></li>
+            <li class="footer"><a href="#" onClick="showContent('delivery.html')">Контакты</a></li>
+            <li class="footer"><a href="#" onClick="showContent('cowork.html')">Сотрудничество с нами</a></li>
+        </ul>
+    </div>
+    <div style="clear: both">
+        <div style="float: left">© Интернет-магазин "Верес", 2002-2016 </div>
+        <div style="float: right">Украина, Киев, бул. академика Вернадского, 34/1</div>
+    </div>
+</footer>
+
+	
+<script>
+showContent('main.html')
+</script>
+
+</body>
+</html>
+
