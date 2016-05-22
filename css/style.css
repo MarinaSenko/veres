@@ -115,3 +115,15 @@ ul a {
     text-decoration: none;
     color: black;
 }
+.menu {
+font-family: Verdana;
+font-size: 18px;
+text-align: center;
+padding: 10px;
+}
+#menu {
+    font-family: Verdana;
+    font-size: 18px;
+    text-align: left;
+    padding: 10px;
+}
