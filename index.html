@@ -56,7 +56,7 @@
         <ul>
             <li class="footer"><a href="#" onClick="showContent('about.html')">О нас</a></li>
             <li class="footer"><a href="#" onClick="showContent('delivery.html')">Контакты</a></li>
-            <li class="footer"><a href="#" onClick="showContent('cowork.html')">Сотрудничество с нами</a></li>
+            <li class="footer"><a href="#" onClick="showContent('cowork.html')">Сотрудничество</a></li>
         </ul>
     </div>
     <div style="clear: both">
@@ -67,10 +67,10 @@
 
 	
 <script>
+    var cont = document.getElementById('content');
+    var http = createRequestObject();
     function showContent(link) {
-        var cont = document.getElementById('content');
         cont.innerHTML = content.innerHTML;
-        var http = createRequestObject();
         if( http )
         { http.open('get', link);
             http.onreadystatechange = function ()
@@ -89,7 +89,6 @@
     catch(e) { return null; }   } } }
 showContent('main.html')
 </script>
-
 </body>
 </html>
 
